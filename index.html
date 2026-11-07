@@ -22,363 +22,7 @@
 
 <title>Vidrios Roveda | Vidrios, Espejos y Cerramientos</title>
 
-<style>
-
-:root{
-    --azul:#17395f;
-    --azul-hover:#204b7d;
-    --celeste:#5da9e9;
-    --gris:#f5f7fa;
-    --texto:#2b2b2b;
-    --whatsapp:#25D366;
-    --sombra:0 10px 25px rgba(0,0,0,.08);
-    --radius:18px;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Segoe UI,Arial,sans-serif;
-    color:var(--texto);
-    background:#fff;
-    line-height:1.6;
-}
-
-img{
-    width:100%;
-    display:block;
-}
-
-.container{
-    width:min(1200px,90%);
-    margin:auto;
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-}
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px 0;
-}
-
-.logo{
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--azul);
-}
-
-.logo span{
-    color:var(--celeste);
-}
-
-.menu{
-    display:flex;
-    gap:28px;
-}
-
-.menu a{
-    text-decoration:none;
-    color:var(--texto);
-    font-weight:600;
-}
-
-.menu a:hover{
-    color:var(--azul);
-}
-
-/* ========================= */
-/* HERO */
-/* ========================= */
-
-.hero{
-    position:relative;
-    min-height:100vh;
-    background:
-    linear-gradient(
-    rgba(0,0,0,.45),
-    rgba(0,0,0,.45)),
-    /* url('https://picsum.photos/900/1600'); */
-    url('img/portada.jpg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-}
-
-.hero-content{
-    color:white;
-    max-width:700px;
-}
-
-.hero h1{
-    font-size:clamp(2.5rem,6vw,5rem);
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:1.15rem;
-    margin-bottom:30px;
-}
-
-.btns{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.btn{
-    text-decoration:none;
-    padding:15px 28px;
-    border-radius:12px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:var(--whatsapp);
-    color:white;
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-    border:2px solid white;
-    color:white;
-}
-
-.btn-secondary:hover{
-    background:white;
-    color:var(--azul);
-}
-
-/* ========================= */
-/* SECTIONS */
-/* ========================= */
-
-section{
-    padding:90px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-title h2{
-    color:var(--azul);
-    font-size:2.4rem;
-}
-
-.section-title p{
-    color:#666;
-    margin-top:10px;
-}
-
-/* ========================= */
-/* SERVICIOS */
-/* ========================= */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:var(--radius);
-    overflow:hidden;
-    box-shadow:var(--sombra);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card img,
-img.card{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-.card-content{
-    padding:20px;
-}
-
-.card h3{
-    color:var(--azul);
-    margin-bottom:10px;
-}
-
-/* ========================= */
-/* SOBRE */
-/* ========================= */
-
-.about{
-    background:var(--gris);
-}
-
-.about-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-
-.about img{
-    border-radius:var(--radius);
-}
-
-.about-text h2{
-    color:var(--azul);
-    margin-bottom:20px;
-}
-
-/* ========================= */
-/* BENEFICIOS */
-/* ========================= */
-
-.benefits{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.benefit{
-    background:white;
-    padding:25px;
-    border-radius:var(--radius);
-    box-shadow:var(--sombra);
-    text-align:center;
-}
-
-.benefit h3{
-    margin-top:10px;
-    color:var(--azul);
-}
-
-/* ========================= */
-/* CONTACTO */
-/* ========================= */
-
-.contact{
-    background:var(--gris);
-}
-
-.contact-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-.contact-info{
-    background:white;
-    padding:30px;
-    border-radius:var(--radius);
-    box-shadow:var(--sombra);
-}
-
-.contact-info h3{
-    color:var(--azul);
-    margin-bottom:15px;
-}
-
-.map{
-    min-height:350px;
-    border-radius:var(--radius);
-    overflow:hidden;
-    box-shadow:var(--sombra);
-}
-
-.map iframe{
-    width:100%;
-    height:100%;
-    border:0;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer{
-    background:#0f2741;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
-
-/* ========================= */
-/* WHATSAPP */
-/* ========================= */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:var(--whatsapp);
-    color:white;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:32px;
-    box-shadow:0 0 25px rgba(0,0,0,.3);
-}
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-
-@media(max-width:768px){
-
-    .menu{
-        display:none;
-    }
-
-    .about-box,
-    .contact-box{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        min-height:90vh;
-    }
-
-    .hero h1{
-        font-size:2.8rem;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -438,13 +82,13 @@ Ver Servicios
 
 <div class="section-title">
 <h2>Servicios</h2>
-<p>Soluciones en vidrio para cada proyecto.</p>
+<p>Soluciones en vidrio para cada proyecto. Tocá una imagen para ampliarla.</p>
 </div>
 
 <div class="grid">
 
 <div class="card">
-<img src="img/hierro_vidrio.jpg">
+<img src="img/hierro_vidrio.jpg" alt="Vidrios a medida">
 <div class="card-content">
 <h3>Vidrios a Medida</h3>
 <p>Cortes personalizados para hogares, oficinas y comercios.</p>
@@ -452,7 +96,7 @@ Ver Servicios
 </div>
 
 <div class="card">
-<img src="img/espejo_decorado.jpeg">
+<img src="img/espejo_decorado.jpeg" alt="Espejo decorado">
 <div class="card-content">
 <h3>Espejos</h3>
 <p>Fabricación e instalación de espejos a medida.</p>
@@ -460,7 +104,7 @@ Ver Servicios
 </div>
 
 <div class="card">
-<img src="img/mampara.webp">
+<img src="img/mampara.webp" alt="Mampara de vidrio">
 <div class="card-content">
 <h3>Mamparas</h3>
 <p>Diseños modernos para baños y espacios funcionales.</p>
@@ -468,7 +112,7 @@ Ver Servicios
 </div>
 
 <div class="card">
-<img src="img/cerramiento_vidrio.jpg">
+<img src="img/cerramiento_vidrio.jpg" alt="Cerramiento de vidrio">
 <div class="card-content">
 <h3>Cerramientos</h3>
 <p>Protección y estética para galerías y balcones.</p>
@@ -476,7 +120,7 @@ Ver Servicios
 </div>
 
 <div class="card">
-<img src="img/frente_comercial.jpg">
+<img src="img/frente_comercial.jpg" alt="Frente comercial de vidrio">
 <div class="card-content">
 <h3>Frentes Comerciales</h3>
 <p>Vidrieras y fachadas de vidrio para negocios.</p>
@@ -484,7 +128,7 @@ Ver Servicios
 </div>
 
 <div class="card">
-<img src="img/reposiciom_vidrio.webp">
+<img src="img/reposiciom_vidrio.webp" alt="Reposición de vidrios">
 <div class="card-content">
 <h3>Reposición de Vidrios</h3>
 <p>Cambio de vidrios dañados con atención rápida.</p>
@@ -503,17 +147,17 @@ Ver Servicios
 
 <div class="section-title">
 <h2>Galería de Trabajos Realizados</h2>
-<p>Algunos ejemplos de nuestros proyectos.</p>
+<p>Algunos ejemplos de nuestros proyectos. Tocá una imagen para ampliarla.</p>
 </div>
 
 <div class="grid">
 
-<img class="card" src="img/trabajo1.jpg">
-<img class="card" src="img/trabajo2.jpg">
-<img class="card" src="img/trabajo3.jpg">
-<img class="card" src="img/trabajo4.jpg">
-<img class="card" src="img/trabajo5.jpg">
-<img class="card" src="img/trabajo6.jpg">
+<img class="card" src="img/trabajo1.jpg" alt="Trabajo realizado 1">
+<img class="card" src="img/trabajo2.jpg" alt="Trabajo realizado 2">
+<img class="card" src="img/trabajo3.jpg" alt="Trabajo realizado 3">
+<img class="card" src="img/trabajo4.jpg" alt="Trabajo realizado 4">
+<img class="card" src="img/trabajo5.jpg" alt="Trabajo realizado 5">
+<img class="card" src="img/trabajo6.jpg" alt="Trabajo realizado 6">
 
 </div>
 
@@ -622,7 +266,7 @@ Sábados 9:00 a 13:00</p>
 
 <div class="map">
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.185340405716!2d-57.550542287940324!3d-37.972803771819265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dbe0c97d7c47%3A0x5802985aa2526b8a!2sPatagones%20610%2C%20B7600BXM%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1794002006410!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.185340405716!2d-57.550542287940324!3d-37.972803771819265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dbe0c97d7c47%3A0x5802985aa2526b8a!2sPatagones%20610%2C%20B7600BXM%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1794002006410!5m2!1ses!2sar" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 </div>
 
@@ -647,6 +291,59 @@ Sábados 9:00 a 13:00</p>
 <a class="whatsapp" href="#">
 💬
 </a>
+
+<dialog class="image-viewer" aria-label="Imagen ampliada">
+<button class="image-viewer-close" type="button" aria-label="Cerrar imagen ampliada" autofocus>&times;</button>
+<img alt="">
+</dialog>
+
+<script>
+const imageViewer = document.querySelector('.image-viewer');
+const enlargedImage = imageViewer.querySelector('img');
+const closeImageViewer = imageViewer.querySelector('button');
+let activeImage;
+
+document.querySelectorAll('.card img, img.card').forEach((image) => {
+    image.setAttribute('role', 'button');
+    image.setAttribute('tabindex', '0');
+    image.setAttribute('aria-label', `Ampliar: ${image.alt}`);
+    image.setAttribute('aria-haspopup', 'dialog');
+
+    const openImage = () => {
+        activeImage = image;
+        enlargedImage.src = image.currentSrc || image.src;
+        enlargedImage.alt = image.alt;
+        imageViewer.showModal();
+        document.body.classList.add('image-viewer-open');
+    };
+
+    image.addEventListener('click', openImage);
+    image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openImage();
+        }
+    });
+});
+
+closeImageViewer.addEventListener('click', () => imageViewer.close());
+imageViewer.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        imageViewer.close();
+    }
+});
+imageViewer.addEventListener('click', (event) => {
+    if (event.target === imageViewer) {
+        imageViewer.close();
+    }
+});
+imageViewer.addEventListener('close', () => {
+    document.body.classList.remove('image-viewer-open');
+    enlargedImage.removeAttribute('src');
+    activeImage.focus({preventScroll:true});
+});
+</script>
 
 </body>
 </html>

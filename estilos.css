@@ -1,0 +1,416 @@
+:root{
+    --azul:#17395f;
+    --azul-hover:#204b7d;
+    --celeste:#5da9e9;
+    --gris:#f5f7fa;
+    --texto:#2b2b2b;
+    --whatsapp:#25D366;
+    --sombra:0 10px 25px rgba(0,0,0,.08);
+    --radius:18px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    color:var(--texto);
+    background:#fff;
+    line-height:1.6;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--azul);
+}
+
+.logo span{
+    color:var(--celeste);
+}
+
+.menu{
+    display:flex;
+    gap:28px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--texto);
+    font-weight:600;
+}
+
+.menu a:hover{
+    color:var(--azul);
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+    /* url('https://picsum.photos/900/1600'); */
+    url('img/portada.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.15rem;
+    margin-bottom:30px;
+}
+
+.btns{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--whatsapp);
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:var(--azul);
+}
+
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    color:var(--azul);
+    font-size:2.4rem;
+}
+
+.section-title p{
+    color:#666;
+    margin-top:10px;
+}
+
+/* ========================= */
+/* SERVICIOS */
+/* ========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--sombra);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img,
+img.card{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card img[role="button"],
+img.card[role="button"]{
+    cursor:zoom-in;
+}
+
+.card img:focus-visible,
+img.card:focus-visible{
+    outline:3px solid var(--celeste);
+    outline-offset:-3px;
+}
+
+body.image-viewer-open{
+    overflow:hidden;
+}
+
+.image-viewer{
+    width:100%;
+    height:100%;
+    max-width:none;
+    max-height:none;
+    border:0;
+    padding:70px 20px 20px;
+    background:transparent;
+}
+
+.image-viewer[open]{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.image-viewer::backdrop{
+    background:rgba(0,0,0,.85);
+}
+
+.image-viewer img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
+
+.image-viewer-close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    color:var(--azul);
+    font-size:28px;
+    cursor:pointer;
+}
+
+.image-viewer-close:focus-visible{
+    outline:3px solid var(--celeste);
+    outline-offset:3px;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+/* ========================= */
+/* SOBRE */
+/* ========================= */
+
+.about{
+    background:var(--gris);
+}
+
+.about-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    border-radius:var(--radius);
+}
+
+.about-text h2{
+    color:var(--azul);
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* BENEFICIOS */
+/* ========================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.benefit{
+    background:white;
+    padding:25px;
+    border-radius:var(--radius);
+    box-shadow:var(--sombra);
+    text-align:center;
+}
+
+.benefit h3{
+    margin-top:10px;
+    color:var(--azul);
+}
+
+/* ========================= */
+/* CONTACTO */
+/* ========================= */
+
+.contact{
+    background:var(--gris);
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    background:white;
+    padding:30px;
+    border-radius:var(--radius);
+    box-shadow:var(--sombra);
+}
+
+.contact-info h3{
+    color:var(--azul);
+    margin-bottom:15px;
+}
+
+.map{
+    min-height:350px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--sombra);
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    background:#0f2741;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* ========================= */
+/* WHATSAPP */
+/* ========================= */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:var(--whatsapp);
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .menu{
+        display:none;
+    }
+
+    .about-box,
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+}
