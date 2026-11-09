@@ -156,10 +156,12 @@
                 </div>
 
                 <div class="grid">
-
-                    <img class="card" src="img/ouerta_colores.png" alt="Trabajo realizado 1">
-                    <img class="card" src="img/puerta_simple_colores.png" alt="Trabajo realizado 3">
-                    <img class="card" src="img/trabajo_pileta1.jpeg" alt="Trabajo realizado 4">
+                    <img class="card" src="img/presentacion1.jpeg" alt="Trabajo realizado 1">
+                    <img class="card" src="img/puerta.jpeg" alt="Trabajo realizado 1">
+                    <img class="card" src="img/Puerta_vidrio.jpeg" alt="Trabajo realizado 2">
+                    <img class="card" src="img/puertaColores.jpeg" alt="Trabajo realizado 1">
+                    <img class="card" src="img/puerta_colores.jpeg" alt="Trabajo realizado 1">
+                    <img class="card" src="img/puerta_simple_colores.png" alt="Trabajo realizado 3">                    
                     <img class="card" src="img/ventana_vitro.jpeg" alt="Trabajo realizado 5">
                     <img class="card" src="img/ventanas.jpeg" alt="Trabajo realizado 6">
                     <img class="card" src="img/ventanas_vertical.jpeg" alt="Trabajo realizado 5">
@@ -178,19 +180,46 @@
                     <img class="card" src="img/techoVidrio2.jpeg" alt="Trabajo realizado 6">
                     <img class="card" src="img/pileta_playa.jpeg" alt="Trabajo realizado 5">
                     <img class="card" src="img/puerta_colores.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/puertasyventana.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/vitro_puertas.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/vidrios_quincho.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/cerramiento_vidrio.jpg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/vidrioRepartido.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/trabajo_pileta1.jpeg" alt="Trabajo realizado 6">
-                    <img class="card" src="img/ventanas_vertical.jpeg" alt="Trabajo realizado 6">
-                    <img src="img" alt="">
+                    <img class="card" src="img/puertasyventana.jpeg" alt="Trabajo realizado 6">                                        
+                    <img class="card" src="img/trabajo_pileta1.jpeg" alt="Trabajo realizado 6">                    
+                    
                 </div>
 
             </div>
 
         </section>
+
+          <section id="trabajos">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Galería de marcos</h2>
+                    <!-- <p>Algunos ejemplos de nuestros proyectos. Tocá una imagen para ampliarla.</p> -->
+                     <p>Algunos ejemplos de nuestros proyectos. <span> Tocame la imagen para que se agrande como mi chota.</span></p>
+
+                </div>
+
+                <div class="grid">
+<img class="card"
+     src="img/cuadros_marcos_de_muestra.jpeg"
+     data-ampliada="img/negro.jpg"
+     alt="Ventanas">
+                    <!-- <img class="card" src="img/cuadros_marcos_de_muestra.jpeg" alt="Galería de arte"> -->
+                    <img class="card" src="img/cuadros_pared.jpeg" alt="Galería de arte">
+                    <img class="card" src="img/cuadros_pared_1.jpeg" alt="Galería de arte">
+                    <img class="card" src="img/cuadros_piso.jpeg" alt="Galería de arte">                    
+                    <img class="card" src="img/pared_exhibicion.jpeg" alt="Galería de arte">
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
 
         <section id="nosotros" class="about">
             <div class="container">
@@ -318,6 +347,7 @@
                         <!-- <p>Respuesta ágil y asesoramiento sin compromiso.</p> -->
                         <p>Le recomendamos tomar todas las precauciones necesarias antes de contratar nuestros
                             servicios.</p>
+                        <p>Tenga en cuanta que Vidrios Roveda no es su única opción.</p>
                         <p>Por favor, tenga en cuenta esta información antes de contratar nuestros servicios.</p>
                         <p>Esta política de garantía se aplica a todos los trabajos realizados por Vidrios Roveda.</p>
                         <p>Le recomendamos leer detenidamente esta sección antes de contratar nuestros servicios.</p>
@@ -424,7 +454,8 @@
 
                 const openImage = () => {
                     activeImage = image;
-                    enlargedImage.src = image.currentSrc || image.src;
+                    // enlargedImage.src = image.currentSrc || image.src;
+                    enlargedImage.src = image.dataset.ampliada || image.currentSrc || image.src;
                     enlargedImage.alt = image.alt;
                     imageViewer.showModal();
                     document.body.classList.add('image-viewer-open');
