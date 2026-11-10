@@ -46,7 +46,10 @@
                     VIDRIOS <span>ROVEDA</span>
                 </div> -->
 
-                <nav class="menu">
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
+                    <span aria-hidden="true">&#9776;</span> Menú
+                </button>
+                <nav class="menu" id="menu-principal" aria-label="Navegación principal">
                     <a href="#servicios">Servicios</a>
                     <a href="#trabajos">Trabajos</a>
                     <a href="#nosotros">Nosotros</a>
@@ -323,6 +326,38 @@
         </dialog>
 
         <script>
+            const navigation = document.querySelector('.nav');
+            const menuToggle = navigation.querySelector('.menu-toggle');
+            const menu = navigation.querySelector('.menu');
+            const mobileMenu = matchMedia('(max-width:768px)');
+
+            const closeMenu = () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+            };
+
+            menuToggle.addEventListener('click', () => {
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!expanded));
+            });
+            menu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
+            navigation.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && mobileMenu.matches &&
+                    menuToggle.getAttribute('aria-expanded') === 'true') {
+                    closeMenu();
+                    menuToggle.focus();
+                }
+            });
+            mobileMenu.addEventListener('change', () => {
+                if (mobileMenu.matches && menu.contains(document.activeElement)) {
+                    menuToggle.focus();
+                }
+                closeMenu();
+            });
+            menuToggle.hidden = false;
+            navigation.classList.add('menu-enhanced');
+
             const imageViewer = document.querySelector('.image-viewer');
             const enlargedImage = imageViewer.querySelector('img');
             const closeImageViewer = imageViewer.querySelector('button');

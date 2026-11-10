@@ -90,6 +90,31 @@ header{
     color:var(--azul);
 }
 
+.menu-toggle{
+    display:none;
+    align-items:center;
+    gap:8px;
+    min-height:44px;
+    padding:8px 16px;
+    border:1px solid var(--azul);
+    border-radius:8px;
+    background:white;
+    color:var(--azul);
+    font:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    color:inherit;
+}
+
+.menu-toggle:focus-visible,
+.menu a:focus-visible{
+    outline:3px solid var(--celeste);
+    outline-offset:3px;
+}
+
 @media(min-width:769px){
     .nav{
         flex-direction:row;
@@ -458,6 +483,28 @@ footer{
 /* ========================= */
 
 @media(max-width:768px){
+
+    .menu-enhanced .menu-toggle{
+        display:flex;
+        align-self:flex-end;
+    }
+
+    .menu-enhanced .menu{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        text-align:center;
+    }
+
+    .menu-enhanced .menu-toggle[aria-expanded="true"] + .menu{
+        display:flex;
+    }
+
+    .menu-enhanced .menu a{
+        padding:10px 16px;
+    }
 
     .contact-box{
         grid-template-columns:1fr;
